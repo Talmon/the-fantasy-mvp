@@ -16,7 +16,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-         
+
          return view('admin.posts.index')->with('posts',Post::all());
 
     }
@@ -61,7 +61,7 @@ class PostsController extends Controller
 
         $featured->move('uploads/posts/', $featured_new_name);
 
-       
+
         $post = Post::create([
             'title' => $request->title,
             'content' => $request->content,
@@ -85,7 +85,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        return view('post')->with('post', $post);
     }
 
     /**
@@ -96,7 +97,7 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-       
+
         return view('admin.posts.edit')->with( ['post' => Post::find($id), 'categories' => Category::all() ] );
     }
 
@@ -115,10 +116,10 @@ class PostsController extends Controller
             'featured' => 'required'
         ]);
 
-        $featured = $request->featured;    
+        $featured = $request->featured;
 
         $featured_edited_name = time().$featured->GetClientOriginalName();
-        
+
         $featured->move('uploads/posts/', $featured_edited_name);
 
         $post = Post::find($id)->update([
@@ -127,10 +128,10 @@ class PostsController extends Controller
             'featured' => '/uploads/posts/'.$featured_edited_name,
             'category_id' => $request->category_id
         ]);
-        
+
         Session::flash('success', 'Post edited successfully');
 
-        return redirect()->route('posts');
+        return redirect()->route('posts')->with('post');
 
     }
 

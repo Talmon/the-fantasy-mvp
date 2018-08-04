@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('css/toastr.min.css')  }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -80,8 +81,8 @@
                 @if(Auth::check())
                     <div class="col-lg-4">
                             <ul class="list-group">
-                                <li class="list-group-item"><a href="{{ route('home') }}">Home</a></li>
-                                <li class="list-group-item"><a href="{{ route('user.profile') }}">My Profile</a></li>
+                                <li class="list-group-item"><a href="{{ route('admin.home') }}">Home</a></li>
+                                <li class="list-group-item"><a href="{{ route('user.profile',['id' => Auth::user()->id]) }}">My Profile</a></li>
                                 <li class="list-group-item"><a href="{{ route('categories') }}">View Categories</a></li>
                                 <li class="list-group-item"><a href="{{ route('posts') }}">View Posts</a></li>
                                 <li class="list-group-item"><a href="{{ route('category.create') }}">Create New Category</a></li>
@@ -114,6 +115,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
     crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+
     <script src="{{ asset('js/toastr.min.js') }}"></script>
 
     <script>
@@ -128,6 +131,14 @@
          @if(Session::has('error'))
             toastr.error("{{ Session::get('error') }}");
         @endif
+    </script>
+
+    <script>
+        $('#summernote').summernote({
+            placeholder: 'Hello bootstrap 4',
+            tabsize: 2,
+            height: 100
+        });
     </script>
 
 

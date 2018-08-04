@@ -11,16 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [
+    'uses'  => 'HomeController@user',
+    'as'    =>  'user.home'
+]);
 
 Auth::routes();
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
-    Route::get('/home', [
-        'uses'  => 'HomeController@index',
-        'as'    =>  'home'
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function(){
+    Route::get('/home',[
+        'uses'  => 'HomeController@admin',
+        'as'    =>  'admin.home'
     ]);
 
     Route::get('/posts', [
@@ -120,8 +122,23 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     ]);
 
     Route::get('/user/profile/{id}', [
-        'uses'  => 'ProfilesController@index',
+        'uses'  => 'ProfilesController@show',
         'as'    =>  'user.profile'
     ]);
+
+    Route::post('/user/profile/{id}', [
+        'uses'  => 'ProfilesController@update',
+        'as'    =>  'user.profile.update'
+    ]);
 });
+
+Route::get('/post/{id}', [
+    'uses'  => 'PostsController@show',
+    'as'    =>  'post.show'
+]);
+
+Route::post('/post/{id}/comment', [
+    'uses'  => 'CommentsController@store',
+    'as'    =>  'comment.store'
+]);
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
+use App\User;
 
 class UsersController extends Controller
 {
@@ -100,7 +101,12 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->profile->delete();
+        $user->delete();
+
+        Session::flash('success','User successfully deleted');
+        return redirect()->route('users');
     }
 
     public function admin($id)

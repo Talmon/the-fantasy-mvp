@@ -15,7 +15,7 @@
              <input type="text" name="title" class="form-control">
         </div>
 
-        <div class="form-group">
+        <div  class="form-group">
              <label for="content">Content</label>
              <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
         </div>
@@ -26,8 +26,8 @@
              <select name="category_id" id="category" class="form-control">
              @foreach($categories as $category)
                 <option value="{{ $category->id }}"> {{$category->name}}</option>
-             @endforeach             
-             </select>   
+             @endforeach
+             </select>
         </div>
 
         <div class="form-group">
@@ -37,9 +37,9 @@
 
        <div class="text-center">
        <button class="text-center btn btn-success">Publish</button>
-       </div> 
-        
-        </form>        
+       </div>
+
+        </form>
     </div>
 </div>
 @stop

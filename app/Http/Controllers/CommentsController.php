@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
+use App\Post;
+use App\Comment;
 use Session;
-use App\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
-class ProfilesController extends Controller
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +18,7 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-//        return view('admin.profiles.index')->with('user', Auth::user());
+        //
     }
 
     /**
@@ -35,9 +37,32 @@ class ProfilesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        if(Auth::user()){
+            $post = Post::find($id);
+            $this->validate($request, [
+                'content' => 'required'
+            ]);
+
+            $comment = Comment::create([
+                'content' => $request->content,
+                'post_id' => $post->id,
+                'user_id' => Auth::user()->id,
+            ]);
+
+            Session::flash('success', 'Your comment has been posted');
+
+            return redirect()->back()->with('comment', $comment );
+        }
+
+        else {
+            Session::flash('info', 'You must be logged in to comment');
+
+            return redirect()->back();
+        }
+
+
     }
 
     /**
@@ -48,7 +73,6 @@ class ProfilesController extends Controller
      */
     public function show($id)
     {
-        return view('admin.profiles.show')->with( ['user' => User::find($id) ] );
 
     }
 
@@ -60,7 +84,7 @@ class ProfilesController extends Controller
      */
     public function edit($id)
     {
-
+        //
     }
 
     /**
@@ -72,29 +96,7 @@ class ProfilesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $user->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => $request->password
-        ]);
-
-        $avatar = $request->avatar;
-
-        $avatar_name = time().$avatar->GetClientOriginalName();
-
-        $avatar->move('uploads/profiles/', $avatar_name);
-
-        $user->profile->update([
-            'facebook' => $request->facebook,
-            'youtube' => $request->youtube,
-            'avatar' => '/uploads/profiles/'.$avatar_name,
-        ]);
-
-//        $user->profile->save($request->only('avatar','youtube','facebook',$user->id));
-        Session::flash('success','User successfully edited');
-        return redirect()->route('users');
-
+        //
     }
 
     /**

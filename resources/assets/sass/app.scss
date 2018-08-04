@@ -12,3 +12,33 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+body{
+    font-family: "Raleway";
+}
+
+nav{
+    font-family: "Raleway";
+    .navbar-brand{
+        font-size: 30px;
+    }
+    .nav-link{
+        margin-left: 20px;
+        color: #CCCCCC;
+    }
+}
+
+.carousel{
+    .carousel-inner{
+        height:600px;
+    }
+    .carousel-caption{
+        background-color: #0b2e13;
+        position:absolute;
+        top:400px;
+        height:100px;
+        left:0;
+        width:600px;
+
+    }
+}
