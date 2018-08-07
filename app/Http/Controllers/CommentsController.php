@@ -18,7 +18,8 @@ class CommentsController extends Controller
      */
     public function index()
     {
-        //
+
+
     }
 
     /**
@@ -45,15 +46,16 @@ class CommentsController extends Controller
                 'content' => 'required'
             ]);
 
-            $comment = Comment::create([
+            $post->comments()->create([
                 'content' => $request->content,
                 'post_id' => $post->id,
                 'user_id' => Auth::user()->id,
             ]);
 
+
             Session::flash('success', 'Your comment has been posted');
 
-            return redirect()->back()->with('comment', $comment );
+            return redirect()->back();
         }
 
         else {
@@ -73,7 +75,7 @@ class CommentsController extends Controller
      */
     public function show($id)
     {
-
+       
     }
 
     /**

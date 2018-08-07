@@ -142,3 +142,7 @@ Route::post('/post/{id}/comment', [
     'as'    =>  'comment.store'
 ]);
 
+Route::get('/post/{id}/comment', [
+    'uses'  => 'CommentsController@show',
+    'as'    =>  'comment.show'
+]);

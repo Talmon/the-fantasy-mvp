@@ -131,7 +131,7 @@ class PostsController extends Controller
 
         Session::flash('success', 'Post edited successfully');
 
-        return redirect()->route('posts')->with('post');
+        return redirect()->route('posts')->with('post', $post);
 
     }
 

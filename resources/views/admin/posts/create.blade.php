@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card">
+<div  class="card">
     <div class="card-header">
         Create a New Article
     </div>
@@ -17,7 +17,7 @@
 
         <div  class="form-group">
              <label for="content">Content</label>
-             <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
+             <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
         </div>
 
 
