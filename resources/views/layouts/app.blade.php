@@ -106,7 +106,7 @@
 
 
  <!-- Scripts -->
- <script src="{{ asset('js/app.js') }}" defer></script>
+ <script src="{{ asset('js/app.js', true) }}" defer></script>
 
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -117,7 +117,7 @@
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
 
-    <script src="{{ asset('js/toastr.min.js') }}"></script>
+    <script src="{{ asset('js/toastr.min.js', true) }}"></script>
 
     <script>
         @if(Session::has('success'))
