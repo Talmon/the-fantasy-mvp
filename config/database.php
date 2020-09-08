@@ -56,7 +56,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => 'db4free . net',
+            'host' => 'db4free.net',
             'port' => '3306',
             'database' => 'divine_sports',
             'username' => 'annointed',
