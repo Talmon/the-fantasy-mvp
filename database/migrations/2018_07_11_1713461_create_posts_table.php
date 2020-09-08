@@ -13,16 +13,16 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::table('posts', function (Blueprint $table) {
+           /*  $table->increments('id');
             $table->string('title');
             $table->string('slug');
             $table->longText('content');
             $table->string('featured');
-            $table->integer('category_id');
-            $table->integer('user_id');
-            $table->softDeletes();
-            $table->timestamps();
+            $table->integer('category_id'); */
+            $table->integer('user_id')->nullable()->change();
+            /* $table->softDeletes();
+            $table->timestamps(); */
         });
     }
 

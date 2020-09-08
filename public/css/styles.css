@@ -1,0 +1,63 @@
+.navbar {
+    background-color: #333333;
+}
+
+
+#footer {
+  background: #333333 !important;
+}
+
+
+.carousel-item {
+    height: 500px;
+}
+
+.carousel .carousel-inner {
+  height: 480px;
+}
+
+
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 300px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.carousel .carousel-caption {
+  background-color: rgba(73, 47, 8, 0.746);
+  position: absolute;
+  padding-top: 1%;
+  height: 250px;
+  left: 0;
+  width: 600px;
+  font-family: "Raleway";
+  color: #fff;
+
+}
+
+.carousel .carousel-caption-home {
+  background-color: rgba(73, 47, 8, 0.746);
+  position: absolute;
+  padding-top: 1%;
+  height: 150px;
+  left: 0;
+  width: 600px;
+  font-family: "Raleway";
+  color: #fff;
+
+}
+
+.carousel .carousel-caption a:hover {
+  /* color: #CCCCCC; */
+  text-decoration: none;
+}
+
+.carousel .carousel-caption h1 {
+  color: #fff;
+}

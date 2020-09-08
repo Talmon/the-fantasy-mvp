@@ -6,6 +6,7 @@ use Session;
 use App\Post;
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -46,6 +47,7 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+    //    dd(Auth::user());
         $this->validate($request, [
             'title' => 'required|max:255',
             'content' => 'required',
