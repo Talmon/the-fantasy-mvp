@@ -51,19 +51,32 @@
 
 <div class="row mt-5" style="font-family: 'Raleway';">
     <div class="col-lg-8">
-        <div class="card-columns">
-            @foreach($posts as $post)
-            <div class="card mr-auto">
+        <!-- <div class="card-columns"> -->
+        @foreach($posts as $post)
+        <!-- <div class="card mr-auto">
                 <img class="card-img-top" src="{{ $post->featured }}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="h5 card-title"><a href="{{  route('post.show', ['id' => $post->id]) }}"> {{ $post->title }} </a> </h5>
                     <p class="lead card-text"> {{ str_limit($post->content, 20) }}</p>
                     <p class="card-text"><small class="text-muted">{{ $post->created_at->diffForHumans() }}</small></p>
                 </div>
+            </div> -->
+        <div class="card ml-5 mb-3" style="max-width: 840px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="{{ $post->featured }}" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="h5 card-title"><a href="{{  route('post.show', ['id' => $post->id]) }}"> {{ $post->title }} </a> </h5>
+                        <p class=" card-text"> <strong> {{ str_limit($post->content, 100) }} </strong> </p>
+                        <p class="card-text"><small class="text-muted">{{ $post->created_at->diffForHumans() }}</small></p>
+                    </div>
+                </div>
             </div>
-            @endforeach
         </div>
-        {{ $posts->links() }}
+        @endforeach
+        <!-- </div> -->
     </div>
 
     @include('layouts.sidebar')

@@ -13,7 +13,7 @@
                 <a class="nav-link" href="#">KNOW  GOD<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">FPL<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/fpl">FPL<span class="sr-only">(current)</span></a>
             </li>
             <!-- <li class="nav-item">
                 <a class="nav-link" href="#">SET PIECE TAKERS</a>

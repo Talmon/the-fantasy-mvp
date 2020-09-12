@@ -22,7 +22,8 @@ const app = new Vue({
 });
 
 $(document).ready(function() {
-    $('#content').summernote({
+    /* $('#content').summernote({
         height:300,
-    });
+    }); */
+    $('#content').summernote('code');
 });

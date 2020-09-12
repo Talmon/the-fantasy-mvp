@@ -72,6 +72,12 @@ class PostsController extends Controller
             'slug' => str_slug($request->title)
         ]);
 
+        $post->content = str_ireplace('<p>', '', $post->content);
+        $post->content = str_ireplace('</p>', '', $post->content);
+        $post->save();
+
+        // dd($post);
+
 
         Session::flash('success', 'Post Uploaded Successfully');
 

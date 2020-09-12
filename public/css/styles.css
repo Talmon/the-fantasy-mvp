@@ -61,3 +61,11 @@
 .carousel .carousel-caption h1 {
   color: #fff;
 }
+
+.list-group a{
+  background-color: rgba(73, 47, 8, 0.746);
+}
+
+.list-group a:hover{
+  background-color: rgba(73, 47, 8, 0.746);
+}

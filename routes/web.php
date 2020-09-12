@@ -17,6 +17,11 @@ Route::get('/', [
     'as'    =>  'user.home'
 ]);
 
+Route::get('/fpl', [
+    'uses'  => 'HomeController@fpl',
+    'as'    =>  'fpl.home'
+]);
+
 Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function(){
@@ -24,6 +29,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function(){
         'uses'  => 'HomeController@admin',
         'as'    =>  'admin.home'
     ]);
+
+    
 
     Route::get('/posts', [
         'uses' => 'PostsController@index',

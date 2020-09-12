@@ -29,7 +29,7 @@
                     <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
                     <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
                     <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-                    <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
+                    <li><a href="javascript:void()" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Videos</a></li>
                 </ul>
             </div>
         </div>
@@ -48,7 +48,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
 
-                <p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">bracketdigitalsolutions</a></p>
+                <p class="h6">&copy All rights Reserved.<a class="text-green ml-2" href="#" target="_blank">bracketdigitalsolutions</a></p>
             </div>
             </hr>
         </div>
