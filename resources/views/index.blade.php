@@ -27,7 +27,7 @@
 
         <a href="#" class="btn btn-primary">Know God</a>
 
-        <a href="#" class="btn btn-primary">FPL</a>
+        <a href="/fpl" class="btn btn-primary">FPL</a>
 
     </div>
     <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
