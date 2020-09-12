@@ -26,7 +26,11 @@ class HomeController extends Controller
     public function user()
     {
            $posts = Post::orderBy('created_at', 'desc')->take(4)->get();
-           return view('index')->with('posts', $posts);
+           $sidebarPosts = $posts->slice(0, 3);
+        //    dd($posts);
+        //    dd($sidebarPosts->keys());
+           return view('index')->with(compact('posts', 'sidebarPosts'));
+        //    return view('index')->with('posts', $posts);
 
     }
 
